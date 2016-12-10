@@ -1,4 +1,12 @@
 #!/bin/sh
 
 export PULSE_PROP="module-stream-restore.id=spotify"
-exec /usr/bin/spotify --force-device-scale-factor=2 "$@"
+
+DPI=$(xdpyinfo | grep resolution | cut -d" " -f7 | cut -d"x" -f1)
+if (( $DPI > 150 )); then
+  SCALE=2
+else
+  SCALE=1
+fi
+
+exec /usr/bin/spotify --force-device-scale-factor=$SCALE "$@"
