@@ -1,0 +1,16 @@
+stage {
+  /* font-family: "Fira Sans"; */
+  font-size: 10pt;
+}
+
+.notification-banner {
+  font-size: 10pt;
+}
+
+.system-status-icon {
+  icon-size: 16px;
+}
+
+.popup-menu-icon {
+  icon-size: 16px;
+}
