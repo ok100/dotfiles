@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export PULSE_PROP="module-stream-restore.id=spotify"
+exec /usr/bin/spotify --force-device-scale-factor=2 "$@"
