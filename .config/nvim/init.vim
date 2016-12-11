@@ -107,12 +107,6 @@ set incsearch
 " Space to turn off highlighting
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" Strip trailing whitespaces on save
-autocmd BufWritePre * StripWhitespace
-
-" Set language for encoding autodetection
-let g:autofenc_ext_prog_args = '-L czech -i'
-
 " Save with C-s
 map <C-s> :w<CR>
 
@@ -122,11 +116,30 @@ map k gk
 map <down> gj
 map <up> gk
 
-" Syntastic
-let g:syntastic_python_flake8_args='--ignore=E122,W191,E501,E402'
-
-" Don't show .gitignore-d files in CtrlP menu
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-
 " Project specific settings
 au BufNewFile,BufRead /home/ondrej/Work/* setlocal noexpandtab tabstop=4 shiftwidth=4
+
+" BetterWhitespace:
+" Strip trailing whitespaces on save
+autocmd BufWritePre * StripWhitespace
+
+" AutoFenc:
+" Set language for encoding autodetection
+let g:autofenc_ext_prog_args = '-L czech -i'
+
+" Syntastic:
+let g:syntastic_python_flake8_args='--ignore=E122,W191,E501,E402'
+
+" CtrlP:
+" Hide .gitignore-d files
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+
+" EasyMotion:
+" Disable default mappings
+let g:EasyMotion_do_mapping = 0
+
+" Jump with `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
