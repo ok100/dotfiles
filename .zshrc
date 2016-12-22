@@ -13,6 +13,7 @@ antigen bundle sindresorhus/pure
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle virtualenvwrapper
 antigen bundle sudo
+antigen bundle kennethreitz/autoenv
 
 antigen apply
 
