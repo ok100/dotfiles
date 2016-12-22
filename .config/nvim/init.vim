@@ -117,7 +117,7 @@ map <down> gj
 map <up> gk
 
 " Project specific settings
-au BufNewFile,BufRead /home/ondrej/Work/* setlocal noexpandtab tabstop=4 shiftwidth=4
+au BufNewFile,BufRead /home/ondrej/Work/*.py setlocal noexpandtab tabstop=4 shiftwidth=4
 
 " BetterWhitespace:
 " Strip trailing whitespaces on save
