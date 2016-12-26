@@ -27,6 +27,7 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'chrisbra/SudoEdit.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 call vundle#end()
 filetype plugin indent on
