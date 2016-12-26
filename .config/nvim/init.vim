@@ -117,6 +117,12 @@ map k gk
 map <down> gj
 map <up> gk
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
 " Project specific settings
 au BufNewFile,BufRead /home/ondrej/Work/*.py setlocal noexpandtab tabstop=4 shiftwidth=4
 
@@ -132,8 +138,16 @@ let g:autofenc_ext_prog_args = '-L czech -i'
 let g:syntastic_python_flake8_args='--ignore=E122,W191,E501,E402'
 
 " CtrlP:
-" Hide .gitignore-d files
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+else
+  " Hide .gitignore-d files
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+endif
 
 " EasyMotion:
 " Disable default mappings
