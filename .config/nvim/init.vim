@@ -28,6 +28,7 @@ Plugin 'chrisbra/SudoEdit.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()
 filetype plugin indent on
@@ -125,6 +126,7 @@ endif
 
 " Project specific settings
 au BufNewFile,BufRead /home/ondrej/Work/*.py setlocal noexpandtab tabstop=4 shiftwidth=4
+au BufNewFile,BufRead /home/ondrej/Work/*.html setlocal noexpandtab tabstop=2 shiftwidth=2
 
 " BetterWhitespace:
 " Strip trailing whitespaces on save
