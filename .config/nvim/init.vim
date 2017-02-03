@@ -118,15 +118,15 @@ map k gk
 map <down> gj
 map <up> gk
 
+set showbreak=↪\
+set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set list
+
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 endif
-
-" Project specific settings
-au BufNewFile,BufRead /home/ondrej/Work/*.py setlocal noexpandtab tabstop=4 shiftwidth=4
-au BufNewFile,BufRead /home/ondrej/Work/*.html setlocal noexpandtab tabstop=2 shiftwidth=2
 
 " BetterWhitespace:
 " Strip trailing whitespaces on save
