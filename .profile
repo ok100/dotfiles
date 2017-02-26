@@ -3,3 +3,4 @@ export PYTHONPATH=$HOME/Work
 export DIFFPROG=meld
 export PAGER=vimpager
 export WINEDEBUG=-all
+export VISUAL=vim
