@@ -5,7 +5,7 @@
 # /___|___/_| |_|
 
 # Antigen
-source /usr/share/zsh/scripts/antigen/antigen.zsh
+source ~/Git/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle mafredri/zsh-async
@@ -13,7 +13,7 @@ antigen bundle sindresorhus/pure
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle virtualenvwrapper
 antigen bundle sudo
-antigen bundle kennethreitz/autoenv
+antigen-bundle Tarrasch/zsh-autoenv
 
 antigen apply
 
