@@ -2,11 +2,12 @@
 
 export PULSE_PROP="module-stream-restore.id=spotify"
 
-DPI=$(xdpyinfo | grep resolution | cut -d" " -f7 | cut -d"x" -f1)
-if (( $DPI > 150 )); then
-  SCALE=2
-else
-  SCALE=1
-fi
+# DPI=$(xdpyinfo | grep resolution | cut -d" " -f7 | cut -d"x" -f1)
+# if (( $DPI > 150 )); then
+#   SCALE=2
+# else
+#   SCALE=1
+# fi
+SCALE=2
 
-exec /usr/bin/spotify --force-device-scale-factor=$SCALE "$@"
+LD_PRELOAD="libcurl-openssl-1.0.so /usr/lib/openssl-1.0-compat/libssl.so /usr/lib/openssl-1.0-compat/libcrypto.so" exec /usr/share/spotify/spotify --force-device-scale-factor=$SCALE "$@"
