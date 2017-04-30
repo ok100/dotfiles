@@ -29,6 +29,7 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'pangloss/vim-javascript'
+Plugin 'lervag/vimtex'
 
 call vundle#end()
 filetype plugin indent on
