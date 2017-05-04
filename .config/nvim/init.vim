@@ -32,6 +32,8 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'lervag/vimtex'
 Plugin 'w0rp/ale'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'mhinz/vim-startify'
 
 call vundle#end()
 filetype plugin indent on
@@ -57,6 +59,7 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
+let g:airline_powerline_fonts = 1
 
 " Enable tabline
 let g:airline#extensions#tabline#enabled = 1
@@ -162,3 +165,11 @@ nmap s <Plug>(easymotion-overwin-f)
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
+
+" Ale:
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+
+" Devicons:
+let g:webdevicons_enable_airline_statusline = 0
+let g:webdevicons_enable_airline_tabline = 0
