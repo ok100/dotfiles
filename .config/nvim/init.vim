@@ -4,10 +4,12 @@
 " | | | |  __/ (_) \ V /| | | | | | |
 " |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 
+scriptencoding utf-8
+
 " Set up Vundle
 filetype off
 
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+set runtimepath+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin('~/.config/nvim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'
@@ -15,7 +17,6 @@ Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'lilydjwg/colorizer'
 Plugin 'vim-scripts/CursorLineCurrentWindow'
-Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 's3rvac/AutoFenc'
@@ -30,6 +31,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'lervag/vimtex'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 filetype plugin indent on
@@ -131,14 +133,13 @@ endif
 
 " BetterWhitespace:
 " Strip trailing whitespaces on save
-autocmd BufWritePre * StripWhitespace
+augroup whitespace
+  autocmd BufEnter * EnableStripWhitespaceOnSave
+augroup END
 
 " AutoFenc:
 " Set language for encoding autodetection
 let g:autofenc_ext_prog_args = '-L czech -i'
-
-" Syntastic:
-let g:syntastic_python_flake8_args='--ignore=E122,W191,E501,E402'
 
 " CtrlP:
 if executable('ag')
