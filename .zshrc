@@ -14,6 +14,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle virtualenvwrapper
 antigen bundle sudo
 antigen bundle Tarrasch/zsh-autoenv
+antigen bundle zsh-users/zsh-autosuggestions
 
 antigen apply
 
@@ -29,3 +30,8 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ }
 
 source ~/.profile
 workon_cwd
+
+# Enable fzf keybindings
+source /etc/profile.d/fzf.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

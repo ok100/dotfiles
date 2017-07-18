@@ -3,3 +3,4 @@ export DIFFPROG=meld
 export PAGER=vimpager
 export WINEDEBUG=-all
 export VISUAL=vim
+export SWT_GTK3=0

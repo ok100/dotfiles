@@ -6,37 +6,35 @@
 
 scriptencoding utf-8
 
-" Set up Vundle
-filetype off
+" Set up Plug
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  execute '!curl -fLo ~/.local/share/nvim/site/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
 
-set runtimepath+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle')
+call plug#begin('~/.local/share/nvim/site/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
-Plugin 'lilydjwg/colorizer'
-Plugin 'vim-scripts/CursorLineCurrentWindow'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 's3rvac/AutoFenc'
-Plugin 'tpope/vim-fugitive'
-Plugin 'exvim/ex-autocomplpop'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'ConradIrwin/vim-bracketed-paste'
-Plugin 'chrisbra/SudoEdit.vim'
-Plugin 'chrisbra/csv.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'lervag/vimtex'
-Plugin 'w0rp/ale'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'mhinz/vim-startify'
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'lilydjwg/colorizer'
+Plug 'vim-scripts/CursorLineCurrentWindow'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 's3rvac/AutoFenc'
+Plug 'tpope/vim-fugitive'
+Plug 'exvim/ex-autocomplpop'
+Plug 'tpope/vim-commentary'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'chrisbra/SudoEdit.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'lervag/vimtex'
+Plug 'w0rp/ale'
+Plug 'ryanoasis/vim-devicons'
+Plug 'mhinz/vim-startify'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'udalov/kotlin-vim'
+Plug 'luochen1990/rainbow'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " Fix missing python module errors when running in virtualenv
 let g:python3_host_prog = '/usr/bin/python'
@@ -70,9 +68,6 @@ set cursorline
 
 " Display line numbers
 set number
-
-" Always show status line
-set laststatus=2
 
 " Do not show current mode on the last line
 set noshowmode
@@ -169,7 +164,14 @@ let g:EasyMotion_smartcase = 1
 " Ale:
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-up> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-down> <Plug>(ale_next_wrap)
 
 " Devicons:
 let g:webdevicons_enable_airline_statusline = 0
 let g:webdevicons_enable_airline_tabline = 0
+
+" Rainbow:
+let g:rainbow_active = 1
